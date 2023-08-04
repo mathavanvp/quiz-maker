@@ -1,0 +1,22 @@
+<div class="quizCategory">
+    <h2>{{pageTitle}}</h2>
+    <form [formGroup]="quizCreateForm" (ngSubmit)="createQuiz()">
+        <div class="form-group">
+            <select formControlName="category" id="categorySelect" class="form-control selectButton">
+                <option value="" [selected]=true [disabled]="true">Select category</option>
+                <option *ngFor="let quizCategory of quizCategories" [value]="quizCategory.id">{{quizCategory.name}}
+                </option>
+            </select>
+            <select formControlName="difficulty" id="difficultySelect" class="form-control selectButton">
+                <option value="" [selected]=true [disabled]="true">Select difficulty</option>
+                <option *ngFor="let quizDifficulty of quizDifficulties">{{quizDifficulty.name}}</option>
+            </select>
+            <button id="createBtn" class="form-control selectButton" type="submit"
+                [disabled]="!quizCreateForm.valid">Submit</button>
+        </div>
+    </form>
+</div>
+<br />
+<div class="quizTestScreen">
+    <app-quiz-testscreen [displayQuizData]="quizQuestions" *ngIf="quizQuestions"></app-quiz-testscreen>
+</div>

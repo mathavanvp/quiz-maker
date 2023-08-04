@@ -1,0 +1,18 @@
+<div class="quizTestScreen">
+    <h2>{{pageTitle}}</h2>
+    <ng-container *ngFor="let data of displayQuizData; index as quizDataPosition">
+        <div name="questions" [innerHTML]="data.question">
+        </div>
+        <input class="selectButton" [class.correctAnswer]="data.correct_answer === combinedData"
+            [class.wrongAnswer]="(data.selected_answers === combinedData) && (data.selected_answers !== data.correct_answer)"
+            *ngFor="let combinedData of data.combined_answers ; index as buttonPosition" type="button"
+            [value]="combinedData" />
+    </ng-container>
+    <br /> <br />
+    <div class="scoreCard" [style.background-color]="resultColor"> You scored {{resltCount}} of 5</div>
+    <br />
+    <div>
+        <button id="createQuiz" routerLink="/home" class="selectButton createQuiz" type="button">Create New
+            Quiz</button>
+    </div>
+</div>
