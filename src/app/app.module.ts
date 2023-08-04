@@ -9,13 +9,16 @@ import { QuizCategoryComponent } from './quiz-category/quiz-category.component';
 import { QuizTestscreenComponent } from './quiz-testscreen/quiz-testscreen.component';
 import { QuizResultComponent } from './quiz-result/quiz-result.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UnicodePipe } from './pipes/unicode.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     QuizCategoryComponent,
     QuizTestscreenComponent,
-    QuizResultComponent
+    QuizResultComponent,
+    UnicodePipe
   ],
   imports: [
     BrowserModule,

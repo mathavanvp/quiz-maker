@@ -5,7 +5,7 @@
         </div>
         <input class="selectButton" [class.selectedAnswer]="data.selected_answers === combinedData"
             *ngFor="let combinedData of data.combined_answers ; index as buttonPosition" type="button"
-            (click)="selectedValue(combinedData, quizDataPosition)" [value]="combinedData" />
+            (click)="selectedValue(combinedData, quizDataPosition)" [value]="combinedData | unicode" />
     </div>
     <br/>
     <div>

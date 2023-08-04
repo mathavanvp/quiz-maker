@@ -25,7 +25,6 @@ export class QuizResultComponent implements OnInit {
       else {
         this.displayResult(response);
       }
-
     });
   }
 
